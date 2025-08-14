@@ -4,6 +4,8 @@ window.addEventListener('DOMContentLoaded', () => {
     let currentRowIndex = 0 // Which line are we on
     let currentTileInRow = 0 // Box index in line
 
+    const turkishLetters = /^[abcçdefgğhıijklmnoöprsştuüvyz]$/i;
+
     // It works when any key is pressed on the keyboard, the information about the pressed key is in event.key
     window.addEventListener('keydown', (event) => {
         const key = event.key;
@@ -20,9 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
             currentTileInRow = 0
         }
             
-         if (key.length === 1 && key.match(/[a-z]/i)){
+         if (key.length === 1 && turkishLetters.test(key) && currentTileInRow < currentRow.length){
             if (currentTileInRow < currentRow.length) {
-                currentRow[currentTileInRow].textContent = key.toUpperCase()
+                currentRow[currentTileInRow].textContent = key.toLocaleUpperCase('tr-TR')
                 currentTileInRow++
             }
                 
