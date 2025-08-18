@@ -9,97 +9,95 @@
 <body>
     <h1>Wordle Clone</h1>
     <hr>
-    <div class="wordle-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
-
-    <div class="wordle-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
-
-    <div class="wordle-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
-
-    <div class="wordle-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
-
-    <div class="wordle-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
-
-    <div class="wordle-grid">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-    </div>
-
-    <div class="keyboard">
-        <div class="keyboard-row">
-            <button class="key">E</button>
-            <button class="key">R</button>
-            <button class="key">T</button>
-            <button class="key">Y</button>
-            <button class="key">U</button>
-            <button class="key">I</button>
-            <button class="key">O</button>
-            <button class="key">P</button>
-            <button class="key">Ğ</button>
-            <button class="key">Ü</button>
+    <div class="game-container">
+        <div class="wordle-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
         </div>
-        <div class="keyboard-row">
-            <button class="key">A</button>
-            <button class="key">S</button>
-            <button class="key">D</button>
-            <button class="key">F</button>
-            <button class="key">G</button>
-            <button class="key">H</button>
-            <button class="key">J</button>
-            <button class="key">K</button>
-            <button class="key">L</button>
-            <button class="key">Ş</button>
-            <button class="key">İ</button>
-        </div>  
-        <div class="keyboard-row">
-            <button class="key wide">ENTER</button>
-            <button class="key">Z</button>
-            <button class="key">C</button>
-            <button class="key">V</button>
-            <button class="key">B</button>
-            <button class="key">N</button>
-            <button class="key">M</button>
-            <button class="key">Ö</button>
-            <button class="key">Ç</button>
-            <button class="key-wide">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
-                    <path d="M20 6H9L4 12l5 6h11a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-5.41 5.59L16.17 13l-1.58 1.59L13 13.17l-1.59 1.58L10 13l1.59-1.59L10 9.83l1.41-1.42L13 10.59l1.59-1.58L16.17 11z"/>
-                </svg>
-            </button>
-    </div>
 
+        <div class="wordle-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+
+        <div class="wordle-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+
+        <div class="wordle-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+
+        <div class="wordle-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+
+        <div class="wordle-grid">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+
+        <div class="keyboard">
+            <div class="keyboard-row">
+                <button data-key="e">E</button>
+                <button data-key="r">R</button>
+                <button data-key="t">T</button>
+                <button data-key="y">Y</button>
+                <button data-key="u">U</button>
+                <button data-key="ı">I</button>
+                <button data-key="o">O</button>
+                <button data-key="p">P</button>
+                <button data-key="ğ">Ğ</button>
+                <button data-key="ü">Ü</button>
+            </div>
+            <div class="keyboard-row">
+                <div class="spacer half"></div>
+                <button data-key="a">A</button>
+                <button data-key="s">S</button>
+                <button data-key="d">D</button>
+                <button data-key="f">F</button>
+                <button data-key="g">G</button>
+                <button data-key="h">H</button>
+                <button data-key="j">J</button>
+                <button data-key="k">K</button>
+                <button data-key="l">L</button>
+                <button data-key="ş">Ş</button>
+                <button data-key="i">İ</button>
+            </div>  
+            <div class="keyboard-row">
+                <button data-key="Enter" class="key-wide">ENTER</button>
+                <button data-key="z">Z</button>
+                <button data-key="c">C</button>
+                <button data-key="v">V</button>
+                <button data-key="b">B</button>
+                <button data-key="n">N</button>
+                <button data-key="m">M</button>
+                <button data-key="ö">Ö</button>
+                <button data-key="ç">Ç</button>
+                <button data-key="Backspace" class="key-wide">⌫</button>
+                </div>
+     </div>
     <script src="script.js"></script>
 </body>
 </html>
