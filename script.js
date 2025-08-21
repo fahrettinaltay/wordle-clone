@@ -1,3 +1,16 @@
+let wordList = []
+
+fetch('words.json')
+    .then(response => response.json())    // convert json to js
+    .then(data => {
+        wordList = data
+        todayWord = wordList[Math.floor(Math.random() * wordList.length)]
+        console.log("The words in today: ", todayWord)
+    })
+    .catch(error => console.error("JSON loading is failed.", error))
+
+
+
 window.addEventListener('DOMContentLoaded', () => {
     const rows = document.querySelectorAll('.wordle-grid'); // All rows
     let currentRowIndex = 0; // Which line are we on

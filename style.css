@@ -1,35 +1,27 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "DIN Next LT Pro", sans-serif;
+}
+
 h1 {
     color: white;
     text-align: center;
-    font-family: "DIN Next LT Pro", sans-serif;
-    font-size: 39px;
+    font-size: 30px;
     text-transform: uppercase;
-}
-
-
-body {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* ekranı dikeyde ortala */
 }
 
 .game-container {
-    width: 100%;       /* Wordle orijinal boyutlara yakın */
-    max-width: var(--game-max-width);    /* çok küçük ekranlar için uyumlu */
-    margin: 0 auto;
-    height: calc(100% - var(--header-height) - var(--sponsor-height) - 5px);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    min-height: 80vh;
 }
 
-hr {
-    border: none;
-    height: 1px;
-    background-color: gray;
-    margin: 10px auto;
-}
 .wordle-grid {
     display: flex;
     gap: 6px;
@@ -44,88 +36,6 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "DIN Next LT Pro", sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    color: whitesmoke;
-    text-transform: uppercase;
-}
-
-.keyboard {
-    margin-top: 0 8px;
-    user-select: none;
-    
-}
-
-.button {
-    width: 43px;
-    height: 58px;
-    padding: 0;
-
-}
-
-.key-wide {
-    margin-top: 0px;
-    margin-right: 6px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    height: 58px;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-family: inherit;
-    font-weight: bold;
-    width: 43px;
-    height: 58px;
-    padding: 0;
-    
-}
-
-.keyboard-row {
-    display: flex;
-    width: 100%;
-    margin: 0 auto 8px;
-    touch-action: manipulation;
-}
-
-
-h1 {
-    color: white;
-    text-align: center;
-    font-family: "DIN Next LT Pro", sans-serif;
-    font-size: 39px;
-    text-transform: uppercase;
-
-}
-
-body {
-    background-color: black;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: gray;
-    margin: 10px auto;
-}
-.wordle-grid {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.tile {
-    width: 60px;
-    height: 60px;
-    border: 2px solid gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "DIN Next LT Pro", sans-serif;
     font-size: 32px;
     font-weight: bold;
     color: whitesmoke;
@@ -135,14 +45,12 @@ hr {
 .keyboard {
     margin-top: 100px;
     user-select: none;
-    
 }
 
 .button {
     width: 43px;
     height: 58px;
     padding: 0;
-
 }
 
 .key-wide {
@@ -159,7 +67,6 @@ hr {
     align-self: center;
 }
 
-
 button[data-key] {
     width: 43px;
     height: 58px;
@@ -174,7 +81,6 @@ button[data-key] {
     font-weight: bold;
     font-size: 18px;
     font-family: "DIN Next LT Pro", sans-serif;
-
 }
 
 .half {
