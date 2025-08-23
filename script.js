@@ -5,10 +5,10 @@ fetch('words.json')
     .then(data => {
         wordList = data
         todayWord = wordList[Math.floor(Math.random() * wordList.length)]
+        
         console.log("The words in today: ", todayWord)
     })
     .catch(error => console.error("JSON loading is failed.", error))
-
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +21,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Main function of operating the keys
     function handleKeyPress(event) {
-        
         const key = event.key;
         const currentRow = rows[currentRowIndex].querySelectorAll('.tile');
         
@@ -31,34 +30,52 @@ window.addEventListener('DOMContentLoaded', () => {
             currentRow[currentTileInRow].textContent = '';
             return;
         }
+
         // -- ENTER --
         if (key === 'Enter' && currentTileInRow === wordLength) {
             let guess = ""
             currentRow.forEach(tile => guess += tile.textContent.toLocaleLowerCase('tr-TR'))
+            
+            if (wordList.includes(guess)) {
+                    let todayWordCopy = todayWord.split(''); // string to array
 
-            // Check the word
-            for (let i = 0; i < wordLength; i++) {
-                    let letter = currentRow[i].textContent.toLocaleLowerCase('tr-TR')
+                    for (let i = 0; i < wordLength; i++) {
+                            // let letter = currentRow[i].textContent.toLocaleLowerCase('tr-TR')
+                            if (guess[i] === todayWord[i]) {
+                                currentRow[i].style.backgroundColor = "green"
+                                todayWordCopy[i] = null
+                            }
+                        }
+                            for (let i = 0; i < wordLength; i++) {
+                                if (currentRow[i].style.backgroundColor !== "green") {
+                                    let letter = guess[i]
+                                    let indexInCopy = todayWordCopy.indexOf(letter);
+                                    if (indexInCopy !== -1) {
+                                        currentRow[i].style.backgroundColor = "gold";
+                                        todayWordCopy[indexInCopy] = null;
+                                    } else {
+                                        currentRow[i].style.backgroundColor = "gray";
+                                    }
+                                }
+                            }
 
-                    if (letter === todayWord[i]) {
-                        currentRow[i].style.backgroundColor = "green"
-                    } else if (todayWord.includes(letter)) {
-                        currentRow[i].style.backgroundColor = "gold"
-                    } else {
-                        currentRow[i].style.backgroundColor = "gray"
+                        
+                    if (guess === todayWord) {
+                        setTimeout(() => alert("Congratulations! You found the word!"), 200)
+                    } 
+
+                    currentRowIndex++;
+                    currentTileInRow = 0;
+
+                    if (currentRowIndex === maxRows) {
+                        setTimeout(() => alert("❌ Game Over! The correct word is: " + todayWord), 200);
                     }
-                }
-            if (guess === todayWord) {
-                setTimeout(() => alert("Congratulations! You found the word!"), 200)
-            } 
-
-            currentRowIndex++;
-            currentTileInRow = 0;
-
-            if (currentRowIndex === maxRows) {
-                setTimeout(() => alert("❌ Game Over! The correct word is: " + todayWord), 200);
+                    return;
+            } else {
+                console.log("kelime listesinde yok")
             }
-            return;
+
+            
 
         }
         
