@@ -5,8 +5,6 @@ fetch('words.json')
     .then(data => {
         wordList = data
         todayWord = wordList[Math.floor(Math.random() * wordList.length)]
-        
-        console.log("The words in today: ", todayWord)
     })
     .catch(error => console.error("JSON loading is failed.", error))
 
